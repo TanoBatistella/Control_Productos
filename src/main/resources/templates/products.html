@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de Productos</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <script>
+        function confirmDelete(event) {
+            const isConfirmed = confirm('¿Estás seguro de que quieres eliminar este producto?');
+            if (!isConfirmed) {
+                event.preventDefault();
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Productos</h1>
+        <a href="/products/new" class="btn btn-add-product">Agregar Nuevo Producto</a>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="product : ${products}">
+                    <td th:text="${product.name}"></td>
+                    <td th:text="${product.description}"></td>
+                    <td th:text="${product.price}"></td>
+                    <td th:text="${product.quantity}"></td>
+                    <td>
+                        <a th:href="@{/products/edit/{id}(id=${product.id})}" class="btn btn-warning">Editar</a>
+                        <a th:href="@{/products/delete/{id}(id=${product.id})}" class="btn btn-danger" onclick="confirmDelete(event)">Eliminar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

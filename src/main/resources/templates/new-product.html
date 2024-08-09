@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Nuevo Producto</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+    <div class="container">
+        <h1>Nuevo Producto</h1>
+        <form th:action="@{/products}" th:object="${product}" method="post">
+            <div class="form-group">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" th:field="*{name}" placeholder="Ingresa el nombre del producto" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Descripción:</label>
+                <textarea id="description" th:field="*{description}" placeholder="Ingresa la descripción del producto"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="price">Precio:</label>
+                <input type="number" id="price" th:field="*{price}" step="0.01" placeholder="Ingresa el precio" required>
+            </div>
+            <div class="form-group">
+                <label for="quantity">Cantidad:</label>
+                <input type="number" id="quantity" th:field="*{quantity}" placeholder="Ingresa la cantidad" required>
+            </div>
+            <div class="button-group">
+                <button type="submit" class="btn btn-primary">Guardar</button>
+                <a href="/products" class="btn btn-secondary">Volver a la lista</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+Para poder runearlo deberás tener Maven y el JDK más actual.
+- Para instalar Maven, puedes seguir los siguientes pasos:
+1. Descarga el archivo de instalación de Maven desde el sitio oficial de Apache Maven
+2. Ejecuta el archivo de instalación y sigue las instrucciones para instalar Maven
+- Para instalar el JDK, puedes seguir los siguientes pasos:
+1. Descarga el archivo de instalación del JDK más actual desde el sitio oficial de Oracle
+2. Ejecuta el archivo de instalación y sigue las instrucciones para instalar el JDK
+- Una vez que tengas Maven y el JDK instalados, puedes crear un proyecto Maven nuevo y añadir la dependencia de Spring Boot a tu archivo pom.xml.
+- Luego, puedes crear un archivo de configuración para Spring Boot, llamado application.properties o application.yml, y configurar las propiedades de tu aplicación.
+- Finalmente, puedes crear un archivo de código Java que contenga la lógica de tu aplicación y utilizar la anotación @SpringBootApplication para indicar a Spring Boot que debe inicializar la aplicación.
+- Al presionar mvn spring-boot:run en tu terminal debería buildear todo el proyecto (si tienes bien instalado maven y jdk se podrá hacer correctamente).
+
+
+
